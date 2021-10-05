@@ -1,4 +1,4 @@
-function createDeck(){
+export function createDeck(){
     let deck = [], s = 1, v = 1;
     for(let i = 0; i < 52; i++){
         deck[i] = {value: v, suit: s};
@@ -12,7 +12,7 @@ function createDeck(){
     return deck;
 }
 
-function shuffleCards(cards){
+export function shuffleCards(cards){
     let l;
     for(let i = 0; i < cards.length; i++){
         let p = Math.floor(Math.random() * 51);

@@ -1,15 +1,35 @@
-/*
- Hearts: 1, Diamonds: 2, Clubs: 3, Spades: 4
- TODO:
-    Make: 
-    isAce
-    shifter
-    lowerChecker
-    finish checker 
-    redBlackChecker
-*/
+import {createDeck, shuffleCards} from "./cards.js";
+
+let deck = createDeck();
+shuffleCards(deck);
+solitaireSort(deck);
 
 function solitaireSort(deck){
-    let first = 0, second = 2, third = 5, fourth = 9, fith = 14, sixth = 20, seventh = 27;
-    let Hearts = 0, Diamonds = 0, Clubs = 0, Spades = 0;
+    let game = [[], [], [], [], [], [], []];
+    let finish = [[], [], [], []];
+    let stack = deck;
+    
+    setupCards(stack, game);
+
+    for(let i = 0; i < game.length; i++)
+        console.log(game[i].length);
+}
+
+function setupCards(deck, game){
+    let j = 0, k = 0;
+
+    for(let i = 0; i < 28; i++){
+        if(j > game.length - 1){
+            k++;
+            j = 0 + k;
+        }
+
+        game[j].push(deck[i]);
+        deck.shift
+        j++;
+    }
+}
+
+function isAce(card){
+    return card == 1;
 }
